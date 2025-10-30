@@ -62,10 +62,17 @@ fact = 1
 for i in range(1,n+1) :
     fact = fact*i
 print("Factorial of",n,"=",fact)    '''
-n = int(input("Enter the number : "))
+'''n = int(input("Enter the number : "))
 sum = 0
 while n != 0 :
     reminder = n%10
     sum += reminder
     n = n//10
-print("Sum of digits : ",sum)    
+print("Sum of digits : ",sum)   '''
+def cal_sum(a,b):
+    sum = a + b
+    print("sum of",a,"and",b, "=",sum)
+    return sum
+cal_sum(34,56)
+cal_sum(45,34)
+ 
