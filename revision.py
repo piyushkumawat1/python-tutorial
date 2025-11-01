@@ -69,10 +69,28 @@ while n != 0 :
     sum += reminder
     n = n//10
 print("Sum of digits : ",sum)   '''
-def cal_sum(a,b):
+'''def cal_sum(a,b):
     sum = a + b
-    print("sum of",a,"and",b, "=",sum)
+    print("sum of",a,"+",b, "=",sum)
     return sum
 cal_sum(34,56)
 cal_sum(45,34)
+cal_sum(233223,234234)'''
+'''n = int(input("Enter the number : "))
+fact = 1
+i = 1
+while(i<=n):
+    fact= fact*i
+    i = i+1
+print("factorial of",n,"=",fact)   '''
+
+n = int(input("Enter the number : "))
+reverse = 0
+reminder = 0
+while(n!=0) : 
+    remider = n%10
+    reverse = reverse *10+reminder
+    n =n/10
+print("reverse of numbers =",reverse)    
+
  
