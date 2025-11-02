@@ -51,14 +51,21 @@ def cal_sum(n) :
     
 sum = cal_sum(n)
 print("Sum  = ",sum)'''
-idx = 0
-list = ["Ironman", "Superman", "thor", "black panther"]
+
+'''list = ["Ironman", "Superman", "thor", "black panther"]
 def print_list(list, idx) :
     if(idx == len(list)) :
         return 
     print(list[idx])
     print_list(list,idx +1 )  
 
-print_list(list,1)
-
-
+print_list(list,0)'''
+n = int(input("Enter the number : "))
+def cal_sum(n) :
+    if(n==0):
+        return 0
+    else :
+        return cal_sum(n-1) +n
+    
+sum = cal_sum(n)
+print("Sum = ",sum)    
