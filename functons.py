@@ -31,4 +31,4 @@ def show(n) :
     print(n)
     show(n+1) 
 
-show(int(input("Enter the alphabat : ")))      
+show(int(input("Enter the number : ")))      
