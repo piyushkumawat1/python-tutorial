@@ -25,10 +25,40 @@ conv_currency(int(input("Enter the  amount of doller : ")))    '''
     else :
         print("odd number")  
 check(int(input("Enter the numebr : ")))   '''
-def show(n) :
+'''def show(n) :
     if(n==100):
       return 0
     print(n)
     show(n+1) 
 
-show(int(input("Enter the number : ")))      
+show(int(input("Enter the number : ")))      '''
+'''n =int(input("Enter the number  :"))
+def fact(n) :
+    if(n ==0 or n==1) :
+        return 1
+    else :
+        return n*fact(n-1)
+    
+
+fact(n)
+print("Facrtorial of",n,"=",n*fact(n-1))'''
+'''n = int(input("Enter the number : "))
+sum = 0
+def cal_sum(n) :
+    if(n==0) :
+        return 0
+    return cal_sum(n-1) +n
+    
+sum = cal_sum(n)
+print("Sum  = ",sum)'''
+idx = 0
+list = ["Ironman", "Superman", "thor", "black panther"]
+def print_list(list, idx) :
+    if(idx == len(list)) :
+        return 
+    print(list[idx])
+    print_list(list,idx +1 )  
+
+print_list(list,1)
+
+
