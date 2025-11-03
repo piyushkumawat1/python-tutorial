@@ -60,7 +60,7 @@ def print_list(list, idx) :
     print_list(list,idx +1 )  
 
 print_list(list,0)'''
-n = int(input("Enter the number : "))
+'''n = int(input("Enter the number : "))
 def cal_sum(n) :
     if(n==0):
         return 0
@@ -68,4 +68,9 @@ def cal_sum(n) :
         return cal_sum(n-1) +n
     
 sum = cal_sum(n)
-print("Sum = ",sum)    
+print("Sum = ",sum)    '''
+f = open("demo.txt","a")
+data = f.read()
+print(data)
+print(type(data))
+f.close()
