@@ -69,7 +69,7 @@ def cal_sum(n) :
     
 sum = cal_sum(n)
 print("Sum = ",sum)    '''
-f = open("demo.txt","a")
+f = open("demo.txt","r")
 data = f.read()
 print(data)
 print(type(data))
