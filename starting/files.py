@@ -1,0 +1,13 @@
+#use of w+ 
+f = open("demo.txt","w+")
+data = f.write("hello guys how are you !\ni hope all you will get a good carrier")
+#use of read(r)
+f =open("demo.txt", "r")
+read = f.read()
+print(read) 
+# use of append(a+) 
+f = open("demo.txt","a")
+append = f.write("\nBe consistence")
+f = open("demo.txt","r")
+append = f.read()
+print(append)
