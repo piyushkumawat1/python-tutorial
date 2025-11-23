@@ -84,13 +84,44 @@ while(i<=n):
     i = i+1
 print("factorial of",n,"=",fact)   '''
 
-n = int(input("Enter the number : "))
-reverse = 0
-reminder = 0
-while(n!=0) : 
-    remider = n%10
-    reverse = reverse *10+reminder
-    n =n/10
-print("reverse of numbers =",reverse)    
-
- 
+# n = int(input("Enter the number : "))
+# reverse = 0
+# reminder = 0
+# while(n!=0) : 
+#     remider = n%10
+#     reverse = reverse *10+reminder
+#     n =n/10
+# print("reverse of numbers =",reverse)    
+# list = ["Piyush", 99.99,98,"AI&Ds"]
+# list.append("Hello guys")
+# list1 = [86.89,23,34,45]
+# list1.sort()
+# print(" List Sort  = ",list1)
+# list1.sort(reverse= True)
+# print("List1 sort reverse = ",list1)
+# list1.reverse()
+# print("List reverse =",list1)
+# list1.pop(4)
+# print("list pop = ", list1)
+# print(list)
+# list[0] = "Sakshee"
+# print(list)
+# list = [1,2,3]
+# copy_list = list.copy()
+# copy_list.reverse()
+# if list == copy_list :
+#     print("List is pelendrome ")
+# else :
+#     print( "List is not pelendromic ")    
+# info = {
+#     "Name" : input("Enter the name : "),
+#     "College" : "PCE",
+#     "Branch" : "AI&DS",
+#     "Roll_no" : int(input("Enter the roll no :")),
+# }
+# print("\n")
+# print("---->>student information<<----") 
+# print("Name of student : ",info["Name"])
+# print("College : ", info["College"])
+# print("Btanch : ", info["Branch"])
+# print("Roll no : ",info["Roll_no"])
