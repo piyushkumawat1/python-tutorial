@@ -39,15 +39,15 @@
 # print(str[ -4 : -2 ])
 
 #Day 12 -Strings method 
-str = "piyush kumawat"
-print(str.upper())
-print(str.lower())         
-print(str.rsplit(" "))
-print(str.split())
-print(str.capitalize())
-print(str.count("y"))
-print(str.replace("piyush","sakshee"))
-print(str.find("u"))
-print(str.index("k"))
+# str = "piyush kumawat"
+# print(str.upper())
+# print(str.lower())         
+# print(str.rsplit(" "))
+# print(str.split())
+# print(str.capitalize())
+# print(str.count("y"))
+# print(str.replace("piyush","sakshee"))
+# print(str.find("u"))
+# print(str.index("k"))
 
  

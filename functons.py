@@ -74,7 +74,31 @@ print("Sum = ",sum)    '''
 # print(data)
 # print(type(data))
 # f.close()
-def my_function(*, name):
-  print("Hello", name)
+# def print_table(num) :
+#   while num<=100 :
+#     print(num)
+#     num +=1
+# num  = int(input("Enter the number : "))    
+ 
 
-my_function(name = "Emil")
+# list = []
+# n = int(input("Enter the number : "))
+# while n <=10 :
+#     sqrt = n*n
+#     list.append(sqrt)
+#     n +=1
+# print(list)  
+  
+x = int(input("Enter the number : "))
+list = []
+for j in range (10,20) :
+        list.append(j)
+i = 1
+while i <= 10 :
+    if x == list[i] :
+        print(f"Number {list[i]} is found at {i} index")
+        break
+    else :
+        print("Finding....") 
+    i +=1           
+   

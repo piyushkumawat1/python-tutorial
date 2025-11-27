@@ -1,95 +1,95 @@
 #using ""del"" keyword to delete our object 
-# class Student :
-#     def __init__(self,name,place):
-#         self.name = name
-#         self.place = place
+class Student :
+    def __init__(self,name,place):
+        self.name = name
+        self.place = place
 
-# s1 = Student("Raj","Rajsthan")  
-# print(s1.name,"\n",s1.place)
-# del s1
-# print(s1)
-# class Person :
-#     __name1 = "Raj singh "
-#     __name2 = "Vijay kumawat"
-#     def __init__(self) :
-#         pass
-#     @staticmethod
-#     def welcome():
-#         print("Hello Student  ")
-#         print("--* Personal information*--")
+s1 = Student("Raj","Rajsthan")  
+print(s1.name,"\n",s1.place)
+del s1
+print(s1)
+class Person :
+    __name1 = "Raj singh "
+    __name2 = "Vijay kumawat"
+    def __init__(self) :
+        pass
+    @staticmethod
+    def welcome():
+        print("Hello Student  ")
+        print("--* Personal information*--")
 
-#     def __hello(self) :
-#         print("Hello !")
+    def __hello(self) :
+        print("Hello !")
 
-#     def Raj_details(self,age):
-#         self.__hello()
-#         print("Name =",self.__name1) 
-#         print("age =",age)
-#     def Vijay_details(self,age) :
-#         self.__hello()
-#         print("Name =",self.__name2)
-#         print("age =",age)
+    def Raj_details(self,age):
+        self.__hello()
+        print("Name =",self.__name1) 
+        print("age =",age)
+    def Vijay_details(self,age) :
+        self.__hello()
+        print("Name =",self.__name2)
+        print("age =",age)
 
-# per = Person()
-# per.welcome()
-# per.Raj_details(17) 
-# per.Vijay_details(18)     
+per = Person()
+per.welcome()
+per.Raj_details(17) 
+per.Vijay_details(18)     
 
 #learn about inheritance       
-# class car :
-#     @staticmethod
-#     def start():
-#         print("Car started...")
-#     @staticmethod
-#     def stop() :
-#         print("Car stopped...")
+class car :
+    @staticmethod
+    def start():
+        print("Car started...")
+    @staticmethod
+    def stop() :
+        print("Car stopped...")
             
-# class Toyota(car):
-#     def __init__(self,name):
-#         self.name = name
-#         print(self.name)
+class Toyota(car):
+    def __init__(self,name):
+        self.name = name
+        print(self.name)
 
-# car1 =Toyota("Fortuner")
-# car1.start()
-# print("Arrived the destination")
-# car1.stop()
-# print("\n")
-# car2 = Toyota("Innova")
-# car1.start()
-# print("Arrived the destination")
-# car1.stop()  
+car1 =Toyota("Fortuner")
+car1.start()
+print("Arrived the destination")
+car1.stop()
+print("\n")
+car2 = Toyota("Innova")
+car1.start()
+print("Arrived the destination")
+car1.stop()  
 
 
-# class A :
-#     varA= ("Welcome to class A") 
+class A :
+    varA= ("Welcome to class A") 
 
-# class B :
-#     varB =("Welcom to class B")
-# class C(A,B):
-#     varC = ("welcome to class C")
-# class1 = C()  
-# print(class1.varA)           
+class B :
+    varB =("Welcom to class B")
+class C(A,B):
+    varC = ("welcome to class C")
+class1 = C()  
+print(class1.varA)           
         
 
-# class Car :
-#     def __init__(self,type):
-#         self.type = type
+class Car :
+    def __init__(self,type):
+        self.type = type
 
-#     @staticmethod
-#     def start():
-#         print("Car started..")
+    @staticmethod
+    def start():
+        print("Car started..")
 
-#     @staticmethod
-#     def stop():
-#         print("Car stopped...")
+    @staticmethod
+    def stop():
+        print("Car stopped...")
 
-# class Toyota(Car):
-#     def __init__(self,name,type):
-#         self.name = name
-#         super().__init__(type) # super()method which is used to access the method of parents class
+class Toyota(Car):
+    def __init__(self,name,type):
+        self.name = name
+        super().__init__(type) # super()method which is used to access the method of parents class
 
-# car1 =Toyota("Fortuner","electric")
-# print(car1.name)
+car1 =Toyota("Fortuner","electric")
+print(car1.name)
 # print(car1.type)
 
 #class method use 
