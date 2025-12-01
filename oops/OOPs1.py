@@ -69,4 +69,18 @@
 # acc1.credit(1000)
 
 
-    
+
+
+
+
+class Student :
+    def __init__(self,name,marks) :  # Constuctor
+        print("Add new students details ")
+        self.name = name
+        self.marks = marks
+
+
+s1  = Student("Piyush",98)        #Attribute
+print(s1.name,s1.marks)
+s2  = Student("Vinay",89)
+print(s2.name,s2.marks)        
