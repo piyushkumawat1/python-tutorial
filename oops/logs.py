@@ -1,137 +1,172 @@
-import time
-import re
-from collections import Counter
+# class Student :
+#     def __init__(self,name,marks) :
+#         self.name = name
+#         self.marks = marks
 
-# ----------------------------------------
-# RULE-BASED DETECTION
-# ----------------------------------------
-def rule_based_detection(log_line):
-    threat_keywords = ["FAILED LOGIN", "UNAUTHORIZED", "MALWARE", "PORT SCAN"]
-    log_upper = log_line.upper()
-    return any(keyword in log_upper for keyword in threat_keywords)
+#     def get_avg(self) :
+#         sum = 0 
+#         for val in self.marks :
+#             sum +=val  
 
-# ----------------------------------------
-# STATISTICAL DETECTION
-# ----------------------------------------
-def statistical_detection(log_line, common_words):
-    words = re.findall(r"\w+", log_line.lower())
-    rare_score = sum(1 for w in words if w not in common_words)
-    return rare_score > 3
-
-# ----------------------------------------
-# READ LOG FILE + AUTO FIX
-# ----------------------------------------
-def read_logs(filename):
-    logs = []
-    labels = []
-
-    with open(filename, "r", encoding="utf-8") as file:
-        for raw in file:
-            raw = raw.strip()
-            if not raw:
-                continue
-
-            if "|" not in raw:
-                print(f"[WARNING] Skipping line without separator: {raw}")
-                continue
-
-            # Use rsplit in case there are extra '|' in the log text
-            try:
-                text, label = raw.rsplit("|", 1)
-            except ValueError:
-                print(f"[WARNING] Skipping malformed line: {raw}")
-                continue
-
-            text = text.strip()
-            label = label.strip().upper()
-
-            if label not in ["SAFE", "THREAT"]:
-                print(f"[WARNING] Invalid label '{label}', converting to SAFE")
-                label = "SAFE"
-
-            logs.append(text)
-            labels.append(label)
-
-    return logs, labels
-
-# ----------------------------------------
-# EVALUATE ALGORITHM
-# ----------------------------------------
-def evaluate(logs, labels, detector, extra=None):
-    TP = FP = TN = FN = 0
-    start = time.time()
-
-    for log, actual in zip(logs, labels):
-        # Only pass extra if detector expects it
-        if extra is None:
-            predicted = detector(log)
-        else:
-            predicted = detector(log, extra)
-
-        if predicted and actual == "THREAT":
-            TP += 1
-        elif predicted and actual == "SAFE":
-            FP += 1
-        elif not predicted and actual == "SAFE":
-            TN += 1
-        elif not predicted and actual == "THREAT":
-            FN += 1
-
-    runtime = time.time() - start
-
-    if len(labels) == 0:
-        accuracy = 0.0
-    else:
-        accuracy = (TP + TN) / len(labels) * 100
-
-    return {
-        "TP": TP,
-        "FP": FP,
-        "TN": TN,
-        "FN": FN,
-        "Accuracy": round(accuracy, 2),
-        "Runtime": round(runtime, 6),
-    }
-
-# ----------------------------------------
-# MAIN
-# ----------------------------------------
-def main():
-    print("Reading logs...")
-    logs, labels = read_logs("/Users/mac/Documents/python-tutorial/oops/logs.py")
-
-    if not logs:
-        print("No valid logs found. Exiting.")
-        return
-
-    all_words = []
-    for log in logs:
-        all_words.extend(re.findall(r"\w+", log.lower()))
-
-    # Common words: those that appear at least twice
-    common_words = {w for w, c in Counter(all_words).items() if c >= 2}
-
-    print("\n=== Rule-Based Detection ===")
-    rb = evaluate(logs, labels, rule_based_detection)
-    print(rb)
-
-    print("\n=== Statistical Detection ===")
-    sd = evaluate(logs, labels, statistical_detection, common_words)
-    print(sd)
-
-    print("\n=== FINAL REPORT ===")
-    print("Rule-Based Accuracy :", rb["Accuracy"], "%")
-    print("Statistical Accuracy:", sd["Accuracy"], "%")
-
-    if rb["Runtime"] < sd["Runtime"]:
-        faster = "Rule-Based"
-    elif sd["Runtime"] < rb["Runtime"]:
-        faster = "Statistical"
-    else:
-        faster = "Tie"
-
-    print("Faster Algorithm    :", faster)
+#         print("hi",self.name,"your average score is",sum/3)
 
 
-if __name__ == "__main__":
-    main()
+# s1 = Student("Piyush kumawat",[98,99,97])
+# s1.get_avg()          
+# class Car :
+#     def __init__(self) :   # Constructor 
+#         self.acc  = False
+#         self.brk = False 
+#         self.clutch = False
+
+
+#     def Start(self) :
+
+#         self.acc = True
+#         self.clutch = True
+#         self.brk = False
+#         print("Car started ...")
+
+# Car1 = Car()
+
+# Car1.Start()
+# class Account :
+#     def __init__(self, acc ,bal) :
+#         self.acc = acc 
+#         self.bal = bal
+    
+
+#     def credit(self,amount) :
+#       self.bal+=amount
+#       print("Final amount : ",self.bal)
+#       return self.bal
+    
+#     def debit(self,amount): 
+#        self.bal -= amount
+#        print("Final amount : ",self.bal)
+#        return self.bal
+
+
+# cus1= Account(1234,10000)
+# cus1.credit(500)
+# cus1.debit(100)
+# class Account :
+#     def __init__(self,Acc_no,Acc_pass) :
+#         self.account_no = Acc_no 
+#         self.__account_pass = Acc_pass
+
+# account_pass  = int(input("Enetr the password : "))
+# c1 = Account(1234,account_pass) 
+# print('Account Number :',c1.account_no) 
+# class Person : 
+#     def __init__(self,name) :
+#         self.name = name
+
+
+#     def __hello(self) :
+#         print(f"Hi {self.name} buddy ")
+#     def welcome(self) :
+#         self.__hello() 
+# s1 = Person("Piyush")
+# s1.welcome()
+# class Car :
+#     def __init__(self,type) :
+#         self.type = type
+#         self.start  = False
+#         self.brk =False
+#         self.clutch = False
+#     def str(self) :
+#         self.start = True
+#         self.brk = True
+#         self.clutch = True
+#         print("Car started... ")
+
+# class Toyotacar(Car) :
+
+#     def __init__(self,brand,color,type) :
+#         self.brand = brand
+#         self.color = color
+#         self.type = type
+#     def car_start(self) :
+#         self.start = True
+#         self.brk = False
+#         self.clutch = True
+#         super().__init__(type)
+#         print(f"{self.brand} started...")
+# car1 = Toyotacar("Fortuner","Black","electric")
+# print(car1.brand)
+# print(car1.color)
+# print(car1.type)
+# car1.car_start()      
+
+# class Person : 
+#     name  = "Anonymous"
+#     def changName(self,name) :
+#         self.name =name 
+        
+
+# p1 = Person()
+# print(p1.changName("rahul"))        
+# class Person : 
+#     name = "Anonymous"
+#     # def changename(self,name) :
+#     #     self.name = name 
+#     @classmethod
+#     def changename(obj,name) :
+#         obj.name = name
+
+
+# p1 = Person()  
+# p1.changename("Rahul shaab")    
+# print(Person.name)
+# print(p1.name)
+# class Student :
+#     def __init__(self,phy,chem,math) :
+#         self.math = math
+#         self.chem = chem
+#         self.phy = phy
+#         #self.percentage = str((self.chem +self.phy + self.math)/3)+"%" 
+
+#     @property
+#     def percentage(self) :
+#             return str((self.chem +self.phy + self.math)/3)+"%" 
+
+
+
+# s1  = Student(97,98,99) 
+# print(s1.percentage)
+# s1.phy = 34
+# print(s1.percentage)
+        
+# class Student :
+#     name = "Anonymous"
+#     @classmethod
+#     def Changename(self,name) :
+#         self.name = name 
+
+# s1 = Student()
+# s1.Changename("Piyush kumawat")
+# print(s1.name)
+# print(Student.name)
+
+
+class Complex :
+    def __init__(self,real,img):
+        self.real = real
+        self.img = img
+
+    def showNum(self) :
+        print(self.real,"i","+",self.img,"j")
+
+    def __add__(self,num2) :
+        newreal = self.real + num2.real    
+        newimg = self.img + num2.img
+        return Complex(newreal,newimg)
+
+
+num1 = Complex(1,3)
+num1.showNum()  
+num2 = Complex(2,4)
+num2.showNum()  
+num3 = num1 + num2 
+num3.showNum()     
