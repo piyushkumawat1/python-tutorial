@@ -267,26 +267,75 @@
 # Try()        
         
 
-import random
+# import random
 
-choices = ["rock" ,"paper", "sessor"]
+# choices = ["rock" ,"paper", "scissors"]
 
-while True : 
-     computer  = random.choice(choices)
-     userchoice = input("Choose (rock ,paper,sessor or quit) : ").lower()
-     print("Computer choice ",computer)
-     if userchoice == "quit" : 
-       print("GAME OVER ")
-       break
-     elif computer == userchoice : 
-         print("Tie ")
-     elif userchoice not in choices :
-         print("Invalid choice")     
-     elif ((computer == "rock" and userchoice == 'sessor') \
-           or (computer == "paper" and userchoice == "rock") \
-            or computer == 'sessor' and userchoice == "paper" ) :
-         print("You lose")
-     else : 
-         print("You win")   
- 
-  
+# while True : 
+#      computer  = random.choice(choices)
+#      userchoice = input("Choose (rock ,paper,scissors or quit) : ").lower()
+#      print("Computer choice ",computer)
+#      if userchoice == "quit" : 
+#        print("GAME OVER ")
+#        break
+#      elif computer == userchoice : 
+#          print("Tie ")
+#      elif userchoice not in choices :
+#          print("Invalid choice")     
+#      elif ((computer == "rock" and userchoice == 'sessor') \
+#            or (computer == "paper" and userchoice == "rock") \
+#             or computer == 'sessor' and userchoice == "paper" ) :
+#          print("You lose")
+#      else : 
+#          print("You win")   
+#          print("")     
+
+# class student :
+#     def __init__(self,name ,age ) :
+#         self.name = name
+#         self.age = age 
+
+
+# class aids(student) :
+#     def __init__(self,dep,role,salary) :
+#         self.dep = dep
+#         self.role = role
+#         self.salary = salary
+#         super().__init__("Piyush Kumawat",18)
+#     def show(self) :
+#         print("Name : ",self.name) 
+#         print("Age : ",self.age)
+#         print("Department : ",self.dep)
+#         print("Role : ",self.role)
+#         print("Salary : ",self.salary)
+
+
+# emp = aids("CS","Software Engineer",1000000)
+# emp.show()              
+# class Enginner :
+#     def __init__(self,name ,age) :
+#         self.name = name 
+#         self.age = age 
+
+
+
+# class Employee(Enginner) :
+#     def shows(self,role,dep,salary) : 
+#         self.role = role
+#         self.dep = dep
+#         self.salary = salary 
+#         super().__init__("Piyush kumawat", 18)
+
+#     def Showdetalis(self) : 
+#         print("Name : ",self.name)
+#         print('age : ',self.age)
+#         print("role : ",self.role)
+#         print("Department : ",self.dep)
+#         print("Salary : ",self.salary)
+# emp = Employee("Data analysist","AIDS",1000325)
+# emp.Showdetalis()            
+rows  = 4
+for i in range (1,5) :
+    for j in range(i) :
+        print('*',end = " ")
+    print("\n")    
